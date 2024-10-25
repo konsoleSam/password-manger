@@ -1,0 +1,32 @@
+{%extends "base.html" %}
+{%block content%}
+<div class="section">
+  <h1 class="display-6">Register Password Manager</h1>
+  <p class="lead">Reach your full potential.</p>
+  <div class="container">
+    <form action="" method="POST">
+      <div class="mb-3">
+        <label for="username" class="form-label">User Name</label>
+        <input type="text" class="form-control password" id="identity" name="identity" aria-describedby="username-help">
+        <div id="username-help" class="form-text">We'll never share your username with anyone else.</div>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control password" id="password" name="password" aria-describedby="password-help">
+        <div id="password-help" class="form-text">Your password is salted and hashed.</div>
+      </div>
+      <div class="mb-3">
+        <label for="password-confirm" class="form-label">Password Again</label>
+        <input type="password" class="form-control password" id="password-confirm" name="password-confirm" aria-describedby="password-confirm-help">
+        <div id="password-confirm-help" class="form-text">You don't want to create an account and not know the password.</div>
+      </div>
+      <div class="mb-3">
+        <input type="checkbox" class="form-check-input" id="remember" name="remember" aria-describedby="remember-help">
+        <label class="form-check-label" for="remember">Remember</label>
+        <div id="remember-help" class="form-text">It's best to sign out when you are done.</div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,7 @@
+cryptography
+Flask
+webview
+waitress
+Flask-SQLAlchemy
+Flask-Login
+cx-Freeze

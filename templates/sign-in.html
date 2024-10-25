@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{%block content%}
+<div class="section">
+  <h1 class="display-6">Sign in to Password Manager</h1>
+  <p class="lead">Enjoy the benefits.</p>
+  <div class="container">
+    <form action="" method="POST">
+      <div class="mb-3">
+        <label for="username" class="form-label">User Name</label>
+        <input type="text" class="form-control password" id="identity" name="identity" aria-describedby="username-help">
+        <div id="username-help" class="form-text">We'll never share your username with anyone else.</div>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control password" id="password" name="password" aria-describedby="password-help">
+        <div id="password-help" class="form-text">Your password is salted and hashed.</div>
+      </div>
+      <div class="mb-3">
+        <input type="checkbox" class="form-check-input" id="remember" name="remember">
+        <label class="form-check-label" for="remember" aria-describedby="remember-help">Remember</label>
+        <div id="remember-help" class="form-text">It's best to sign out when you are done.</div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

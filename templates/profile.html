@@ -1,0 +1,73 @@
+{%extends "base.html" %}
+{% block content %}
+  <div class="container">
+    <h1 class="display-6">Profile</h1>
+    <p class="lead">Manage your data.</p>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <button type="button" class="btn btn-dark" data-bs-toggle="dropdown">
+            Action
+        </button>
+        <div class="dropdown-menu">
+          <a href="{{ url_for('create')}}" class="dropdown-item" title="Create">
+            <i class="fas fa-eye">Create</i>
+          </a>
+          <a href="{{ url_for('change_password')}}" class="dropdown-item" title="Change Password">
+            <i class="fas fa-eye">Change Password</i>
+          </a>
+          <a href="{{ url_for('delete_account')}}" class="dropdown-item" title="Delete Account">
+            <i class="fas fa-eye">Delete Account</i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <table class="table table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th>Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for file in current_user.files %}
+          <tr>
+            <td>{{file.name}}</td>
+            <td>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-dark" data-bs-toggle="dropdown">
+                  Action
+                </button>
+                <div class="dropdown-menu">
+                  <form action="{{url_for('view')}}" method="POST">
+                    <input type="hidden" name="file-id" id="file-id" value="{{ file.id }}">
+                    <button type="submit" class="dropdown-item" title="View">
+                      <i class="fas fa-eye">View</i> 
+                    </button>
+                  </form>
+                  <form action="{{url_for('edit')}}" method="POST">
+                    <input type="hidden" name="file-id" id="file-id" value="{{ file.id }}">
+                    <button type="submit" class="dropdown-item" title="Edit">
+                      <i class="fas fa-edit">Edit</i> 
+                    </button>
+                  </form>
+                  <form action="{{url_for('delete')}}" method="POST">
+                    <input type="hidden" name="file-id" id="file-id" value="{{ file.id }}">
+                    <button type="submit" class="dropdown-item delete-button" title="Delete">
+                      <i class="fas fa-trash">Delete</i> 
+                    </button>
+                  </form>
+                  <!-- <a href="" class="dropdown-item" title="Edit">
+                    <i class="fas fa-edit">Edit</i>
+                  </a>
+                  <button type="button" class="dropdown-item delete-button" title="Delete">
+                    <i class="fas fa-trash">Delete</i>
+                  </button> -->
+                </div>
+              </div>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

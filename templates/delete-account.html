@@ -1,0 +1,16 @@
+{%extends "base.html" %}
+{%block content%}
+<div class="section">
+  <h1 class="display-6">Delete account</h1>
+  <div class="container">
+    <form action="" method="POST">
+      <div class="mb-3">
+        <label for="password" class="form-label">Current Password</label>
+        <input type="password" class="form-control password" id="password" name="password" aria-describedby="password-help">
+        <div id="password-help" class="form-text">Confirm by entering your password.</div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{%extends "base.html" %}
+{% block content %}
+  <div class="container">
+    <h1 class="display-6">Create</h1>
+    <p class="lead">Your password will be encrypted</p>
+    <form action="{{ url_for('create') }}" method="POST">
+      <table class="table table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>Name</th>
+            <th>Password</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <input type="text" class="form-control" id="name" name="name" value="{{ name }}">
+            </td>
+            <td>
+              <input type="text" class="form-control" id="password" name="password" value="{{ data }}">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <input type="hidden" id="file-id" name="file-id" value="{{ file_id }}">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+{% endblock %}

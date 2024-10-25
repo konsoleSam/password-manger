@@ -1,0 +1,25 @@
+{%extends "base.html" %}
+{% block content %}
+  <div class="container">
+    <h1 class="display-6">View</h1>
+    <p class="lead">Make sure no one sees your password.</p>
+    <table class="table table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th>Name</th>
+          <th>Password</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            {{name}}
+          </td>
+          <td>
+            {{data}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
